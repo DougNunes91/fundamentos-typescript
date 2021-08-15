@@ -1,7 +1,5 @@
-export class NegociacoesView {
-    constructor(seletor) {
-        this.elemento = document.querySelector(seletor);
-    }
+import { Views } from "./views.js";
+export class NegociacoesView extends Views {
     // retorna um template (q é o html abaixo), mapeia cada objeto para um string, o map retorna um array de strings
     // e o join ajunta tudo em uma string separando cada elemento por nada, q seria o ('').
     // new Intl.DateTimeFormat().format(negociacao.data): estou criando uma instancia para DateTimeFormat

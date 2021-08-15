@@ -1,11 +1,9 @@
 import { Negociacoes } from "../models/negociacoes.js";
+import { Views } from "./views.js";
 
-export class NegociacoesView{
-    private elemento: HTMLElement;
+export class NegociacoesView extends Views<Negociacoes>{
 
-    constructor(seletor: string){
-        this.elemento = document.querySelector(seletor);
-    }
+
 
     // retorna um template (q é o html abaixo), mapeia cada objeto para um string, o map retorna um array de strings
     // e o join ajunta tudo em uma string separando cada elemento por nada, q seria o ('').
