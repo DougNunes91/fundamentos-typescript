@@ -9,5 +9,5 @@ export abstract class Views<T>{
 
     abstract update(model: T): void;
 
-    abstract template(model: T): string;
+    protected abstract template(model: T): string;
 }
