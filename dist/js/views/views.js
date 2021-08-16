@@ -1,6 +1,7 @@
-// o generics é utilizado para os tipos de parametros dos metodos abaixo. O 'T' é definido pelas classes filhas 
 export class Views {
-    constructor(seletor) {
+    constructor(seletor, escapar) {
+        this.escapar = false;
         this.elemento = document.querySelector(seletor);
+        this.escapar = escapar;
     }
 }

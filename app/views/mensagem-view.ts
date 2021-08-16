@@ -10,8 +10,14 @@ export class MensagemView extends Views<string>{
         `
     }
 
-    update(model: string): void{
-        const template = this.template(model);
+    // esse regex irá remover toda a tag <script>
+    public update(model: string): void{
+        let template = this.template(model);
+        if (this.escapar){
+            template = template.replace(/<script>[\s\S]*?<\/script>/, "");
+        }
+
         this.elemento.innerHTML = template;
+        
     }
 }

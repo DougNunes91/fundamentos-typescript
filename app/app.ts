@@ -3,7 +3,7 @@ import { Negociacao } from "./models/negociacao.js"
 
 const negociacao = new Negociacao(new Date, 10, 100);
 const negociacaoController = new NegociacaoController()
-const botao = document.querySelector("#botao");
+const botao = document.querySelector("#botao") as HTMLInputElement;
 botao.addEventListener("click", event => {
     event.preventDefault();
     negociacaoController.add();

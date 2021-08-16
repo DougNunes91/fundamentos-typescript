@@ -6,7 +6,10 @@ export class MensagemView extends Views {
         `;
     }
     update(model) {
-        const template = this.template(model);
+        let template = this.template(model);
+        if (this.escapar) {
+            template = template.replace(/<script>[\s\S]*?<\/script>/, "");
+        }
         this.elemento.innerHTML = template;
     }
 }

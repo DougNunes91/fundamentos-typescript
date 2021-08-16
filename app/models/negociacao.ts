@@ -33,4 +33,15 @@ export class Negociacao{
     get volume(): number{
         return this._valor * this._quantidade;
     }
+
+
+    //Eu uso um regex dentro do replace pegando todos os hífes. O g representa todos os hífes q existem na string.
+    //Substitui todos os hífes para vírgula. Os inputs sempre retornam string quando usam a propriedade value
+    // O vírgula é usado no parametro do construtor do Date pq ele só aceita virgula mesmo.
+    // O input do tipo date retorna sempre com hífen as datas, entao removemos para virgula
+    public static criaDe(data: string, valor: string, quantidade: string){
+        return new Negociacao(new Date(data.replace(/-/g, ",")), 
+        parseInt(valor), 
+        parseFloat(quantidade));
+    }
 }
